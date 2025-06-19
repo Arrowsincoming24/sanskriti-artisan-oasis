@@ -5,6 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Landing from "./pages/Landing";
+import ArtisanLogin from "./pages/ArtisanLogin";
+import CustomerLogin from "./pages/CustomerLogin";
+import ArtisanDashboard from "./pages/ArtisanDashboard";
+import CustomerDashboard from "./pages/CustomerDashboard";
 import Marketplace from "./pages/Marketplace";
 import ProductDetail from "./pages/ProductDetail";
 import ArtisanProfiles from "./pages/ArtisanProfiles";
@@ -26,7 +31,12 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Index />} />
+          <Route path="/artisan-login" element={<ArtisanLogin />} />
+          <Route path="/customer-login" element={<CustomerLogin />} />
+          <Route path="/artisan-dashboard" element={<ArtisanDashboard />} />
+          <Route path="/customer-dashboard" element={<CustomerDashboard />} />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/artisans" element={<ArtisanProfiles />} />
